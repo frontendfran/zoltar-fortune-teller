@@ -1,12 +1,9 @@
-// https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
-// https://fonts.google.com/specimen/Charm?preview.text=ZOLTAR&classification=Handwriting
-
 'use client'
 
 import { useEffect, useState } from 'react';
-import { Roboto } from 'next/font/google';
+import { Charm } from 'next/font/google';
 
-const roboto = Roboto({
+const charm = Charm({
   weight: '400',
   subsets: ['latin'],
 })
@@ -25,8 +22,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className={roboto.className}>
-      <h1>{fortune}</h1>
+    <main>
+      <h1 className={charm.className}>Zoltar</h1>
+      <h2>{fortune}</h2>
       <button onClick={getFortune}>Get Fortune</button>
     </main>
   );
