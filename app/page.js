@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Charm } from 'next/font/google';
 
 const charm = Charm({
@@ -17,12 +17,8 @@ export default function Home() {
     setFortune(data.slip.advice);
   }
 
-  useEffect(function () {
-    getFortune();
-  }, []);
-
   return (
-    <main>
+    <main className="container mx-auto">
       <h1 className={charm.className}>Zoltar</h1>
       <h2>{fortune}</h2>
       <button onClick={getFortune}>Get Fortune</button>
